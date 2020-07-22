@@ -12,4 +12,11 @@ public class RockBeatsScissorsScenarios {
         var completedGame = game.playerChoosesRock().opponentChoosesScissors();
         assertTrue(completedGame.hasPlayerWon());
     }
+
+    @Test
+    public void given_i_have_chosen_scissors_when_the_opponent_chooses_rock_then_they_should_win() {
+        var game = new Game();
+        var completedGame = game.playerChoosesScissors().opponentChoosesRock();
+        assertTrue(completedGame.hasOppenentWon());
+    }
 }
