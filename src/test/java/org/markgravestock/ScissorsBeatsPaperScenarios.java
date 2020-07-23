@@ -19,4 +19,10 @@ public class ScissorsBeatsPaperScenarios {
         var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.PAPER);
         assertTrue(completedGame.hasPlayerWon());
     }
+
+    @Test
+    public void given_i_have_chosen_paper_when_the_opponent_chooses_scissors_then_they_should_win() {
+        var completedGame = game.playerChooses(Choice.PAPER).opponentChooses(Choice.SCISSORS);
+        assertTrue(completedGame.hasOpponentWon());
+    }
 }
