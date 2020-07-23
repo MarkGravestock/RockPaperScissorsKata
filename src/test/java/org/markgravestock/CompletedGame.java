@@ -11,10 +11,14 @@ public class CompletedGame {
     }
 
     public boolean hasPlayerWon() {
-        return !hasOpponentWon();
+        return !isDraw() && !hasOpponentWon();
     }
 
     public boolean hasOpponentWon() {
-        return opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
+        return !isDraw() && opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
+    }
+
+    public boolean isDraw() {
+        return opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK);
     }
 }
