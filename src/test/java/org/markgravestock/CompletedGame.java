@@ -9,7 +9,7 @@ public class CompletedGame {
     }
 
     public boolean hasPlayerWon() {
-        return true;
+        return !hasOpponentWon();
     }
 
     public boolean hasOpponentWon() {

@@ -1,6 +1,6 @@
 package org.markgravestock;
 
-public class Game {
+public class NewGame {
 
     public OpponentMove playerChoosesRock() {
         return new OpponentMove();

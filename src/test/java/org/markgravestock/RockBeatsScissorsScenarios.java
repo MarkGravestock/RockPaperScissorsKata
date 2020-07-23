@@ -8,11 +8,11 @@ import static org.junit.Assert.assertTrue;
 
 public class RockBeatsScissorsScenarios {
 
-    private Game game;
+    private NewGame game;
 
     @Before
     public void beforeAll() {
-        game = new Game();
+        game = new NewGame();
     }
 
     @Test
@@ -31,5 +31,11 @@ public class RockBeatsScissorsScenarios {
     public void given_i_have_chosen_scissors_when_the_opponent_chooses_rock_then_they_should_win() {
         var completedGame = game.playerChoosesScissors().opponentChoosesRock();
         assertTrue(completedGame.hasOpponentWon());
+    }
+
+    @Test
+    public void given_i_have_chosen_scissors_when_the_opponent_chooses_rock_then_i_should_not_win() {
+        var completedGame = game.playerChoosesScissors().opponentChoosesRock();
+        assertFalse(completedGame.hasPlayerWon());
     }
 }
