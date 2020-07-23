@@ -10,15 +10,24 @@ public class CompletedGame {
         this.playerChoice = playerChoice;
     }
 
+    private boolean isOutcome(Outcome outcome) {
+
+        return switch(outcome) {
+            case PLAYER_WON -> !isDraw() && !hasOpponentWon();
+            case OPPONENT_WON -> !isDraw() && opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
+            case DRAW -> opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK);
+        };
+    }
+
     public boolean hasPlayerWon() {
-        return !isDraw() && !hasOpponentWon();
+        return isOutcome(Outcome.PLAYER_WON);
     }
 
     public boolean hasOpponentWon() {
-        return !isDraw() && opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
+        return isOutcome(Outcome.OPPONENT_WON);
     }
 
     public boolean isDraw() {
-        return opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK);
+        return isOutcome(Outcome.DRAW);
     }
 }

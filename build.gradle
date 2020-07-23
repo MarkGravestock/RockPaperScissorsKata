@@ -2,6 +2,10 @@ plugins {
     id 'java'
 }
 
+java {
+    sourceCompatibility = JavaVersion.current()
+}
+
 group 'org.markgravestock'
 version '1.0-SNAPSHOT'
 
