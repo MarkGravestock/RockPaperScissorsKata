@@ -8,14 +8,7 @@ public class OpponentMove {
         this.playerChoice = playerChoice;
     }
 
-    public CompletedGame opponentChoosesScissors() {
-        return new CompletedGame(Choice.SCISSORS, playerChoice);
-    }
-
-    public CompletedGame opponentChoosesRock() {
-        return new CompletedGame(Choice.ROCK, playerChoice);
-    }
-
-    public CompletedGame opponentChoosesPaper() { return new CompletedGame(Choice.PAPER, playerChoice);
+    public CompletedGame opponentChooses(Choice opponentChoice) {
+        return new CompletedGame(opponentChoice, playerChoice);
     }
 }

@@ -14,3 +14,7 @@ Using instructions from https://agilekatas.co.uk/katas/RockPaperScissors-Kata
 - Does having 2 won methods make API harder to use. How about completedGame.winner().equals(Competitor.PLAYER) or completedGame.isWinner(Competitor.PLAYER) ?
 
 - Note the weird user story and contrived SO THAT.
+
+- I need to consider applying TPP principles to my API (https://8thlight.com/blog/micah-martin/2012/11/17/transformation-priority-premise-applied.html)
+    - Constant -> Scalar e.g. playerChoosesRock() -> playerChooses(Choice.ROCK). Which is suggested by the refactor to remove duplication (algorithmic)
+    - Also refactors there can be an opposite e.g. introduce variable <-> inline 

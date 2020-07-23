@@ -15,13 +15,13 @@ public class PaperBeatsRockScenarios {
 
     @Test
     public void given_i_have_chosen_paper_when_the_opponent_chooses_rock_then_i_should_win() {
-        var completedGame = game.playerChoosesPaper().opponentChoosesRock();
+        var completedGame = game.playerChooses(Choice.PAPER).opponentChooses(Choice.ROCK);
         assertTrue(completedGame.hasPlayerWon());
     }
 
     @Test
     public void given_i_have_chosen_rock_when_the_opponent_chooses_paper_then_they_should_win() {
-        var completedGame = game.playerChoosesRock().opponentChoosesPaper();
+        var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.PAPER);
         assertTrue(completedGame.hasOpponentWon());
     }
 }
