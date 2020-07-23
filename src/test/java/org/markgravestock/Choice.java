@@ -1,5 +1,5 @@
 package org.markgravestock;
 
 public enum Choice {
-    SCISSORS, ROCK
+    SCISSORS, PAPER, ROCK
 }

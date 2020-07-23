@@ -1,11 +1,13 @@
 package org.markgravestock;
 
 public class CompletedGame {
-    private Choice opponentChoice;
+    private final Choice opponentChoice;
+    private final Choice playerChoice;
 
-    public CompletedGame(Choice opponentChoice) {
+    public CompletedGame(Choice opponentChoice, Choice playerChoice) {
 
         this.opponentChoice = opponentChoice;
+        this.playerChoice = playerChoice;
     }
 
     public boolean hasPlayerWon() {
@@ -13,6 +15,6 @@ public class CompletedGame {
     }
 
     public boolean hasOpponentWon() {
-        return opponentChoice.equals(Choice.ROCK);
+        return opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK);
     }
 }
