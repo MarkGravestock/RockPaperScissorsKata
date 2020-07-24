@@ -13,9 +13,9 @@ public class CompletedGame {
     public boolean isOutcome(Outcome outcome) {
 
         return switch(outcome) {
+            case DRAW -> opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK);
             case PLAYER_WON -> !isOutcome(Outcome.DRAW) && !isOutcome(Outcome.OPPONENT_WON);
             case OPPONENT_WON -> !isOutcome(Outcome.DRAW) && opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
-            case DRAW -> opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK);
         };
     }
 }
