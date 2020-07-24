@@ -31,4 +31,10 @@ public class SameMovesResultInDrawScenarios {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.ROCK);
         assertFalse(completedGame.isOutcome(Outcome.PLAYER_WON));
     }
+
+    @Test
+    public void given_i_have_chosen_paper_when_the_opponent_chooses_paper_then_we_should_draw() {
+        var completedGame = game.playerChooses(Choice.PAPER).opponentChooses(Choice.PAPER);
+        assertTrue(completedGame.isOutcome(Outcome.DRAW));
+    }
 }

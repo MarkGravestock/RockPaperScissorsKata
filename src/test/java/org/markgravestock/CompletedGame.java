@@ -15,7 +15,7 @@ public class CompletedGame {
     }
 
     private Outcome determineOutcome() {
-        if (opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK)) {
+        if (opponentChoice.equals(Choice.ROCK) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.PAPER)) {
             return Outcome.DRAW;
         }
 
