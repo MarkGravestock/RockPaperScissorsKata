@@ -17,12 +17,12 @@ public class ScissorsBeatsPaperScenarios {
     @Test
     public void given_i_have_chosen_scissors_when_the_opponent_chooses_paper_then_i_should_win() {
         var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.PAPER);
-        assertTrue(completedGame.hasPlayerWon());
+        assertTrue(completedGame.isOutcome(Outcome.PLAYER_WON));
     }
 
     @Test
     public void given_i_have_chosen_paper_when_the_opponent_chooses_scissors_then_they_should_win() {
         var completedGame = game.playerChooses(Choice.PAPER).opponentChooses(Choice.SCISSORS);
-        assertTrue(completedGame.hasOpponentWon());
+        assertTrue(completedGame.isOutcome(Outcome.OPPONENT_WON));
     }
 }

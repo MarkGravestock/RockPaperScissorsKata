@@ -17,18 +17,18 @@ public class SameMovesResultInDrawScenarios {
     @Test
     public void given_i_have_chosen_rock_when_the_opponent_chooses_rock_then_we_should_draw() {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.ROCK);
-        assertTrue(completedGame.isDraw());
+        assertTrue(completedGame.isOutcome(Outcome.DRAW));
     }
 
     @Test
     public void given_i_have_chosen_paper_when_the_opponent_chooses_paper_then_they_should_not_have_won() {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.ROCK);
-        assertFalse(completedGame.hasOpponentWon());
+        assertFalse(completedGame.isOutcome(Outcome.OPPONENT_WON));
     }
 
     @Test
     public void given_i_have_chosen_paper_when_the_opponent_chooses_paper_then_i_should_not_have_won() {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.ROCK);
-        assertFalse(completedGame.hasPlayerWon());
+        assertFalse(completedGame.isOutcome(Outcome.PLAYER_WON));
     }
 }
