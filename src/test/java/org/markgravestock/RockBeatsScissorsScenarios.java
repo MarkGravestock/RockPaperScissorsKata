@@ -23,7 +23,7 @@ public class RockBeatsScissorsScenarios {
     @Test
     public void given_i_have_chosen_rock_when_the_opponent_chooses_scissors_then_they_should_not_win_5() {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.SCISSORS);
-        assertFalse(completedGame.isOutcome(Outcome.OPPONENT_WON));
+        assertNotEquals(completedGame.determineOutcome(), Outcome.OPPONENT_WON);
     }
 
     @Test
@@ -35,6 +35,6 @@ public class RockBeatsScissorsScenarios {
     @Test
     public void given_i_have_chosen_scissors_when_the_opponent_chooses_rock_then_i_should_not_win_4() {
         var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.ROCK);
-        assertFalse(completedGame.isOutcome(Outcome.PLAYER_WON));
+        assertNotEquals(completedGame.determineOutcome(), Outcome.PLAYER_WON);
     }
 }
