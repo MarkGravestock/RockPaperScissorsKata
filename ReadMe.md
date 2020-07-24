@@ -28,3 +28,5 @@ Using instructions from https://agilekatas.co.uk/katas/RockPaperScissors-Kata
 | SCISSORS | Opponent Win (5) | Player Win (8) | Draw (3) |
 
 9 Outcomes.
+
+Trying a 'devils advocate strategy on the implementation'.

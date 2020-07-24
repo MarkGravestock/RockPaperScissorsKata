@@ -3,6 +3,7 @@ package org.markgravestock;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ScissorsBeatsPaperScenarios {
@@ -18,6 +19,12 @@ public class ScissorsBeatsPaperScenarios {
     public void given_i_have_chosen_scissors_when_the_opponent_chooses_paper_then_i_should_win_8() {
         var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.PAPER);
         assertTrue(completedGame.isOutcome(Outcome.PLAYER_WON));
+    }
+
+    @Test
+    public void given_i_have_chosen_scissors_when_the_opponent_chooses_paper_then_they_should_not_win_8() {
+        var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.PAPER);
+        assertFalse(completedGame.isOutcome(Outcome.OPPONENT_WON));
     }
 
     @Test
