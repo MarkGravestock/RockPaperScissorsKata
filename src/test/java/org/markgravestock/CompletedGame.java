@@ -14,7 +14,7 @@ public class CompletedGame {
         return determineOutcome().equals(outcome);
     }
 
-    private Outcome determineOutcome() {
+    public Outcome determineOutcome() {
         if (opponentChoice.equals(playerChoice)) {
             return Outcome.DRAW;
         }
