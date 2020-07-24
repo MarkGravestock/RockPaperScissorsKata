@@ -17,4 +17,14 @@ Using instructions from https://agilekatas.co.uk/katas/RockPaperScissors-Kata
 
 - I need to consider applying TPP principles to my API (https://8thlight.com/blog/micah-martin/2012/11/17/transformation-priority-premise-applied.html)
     - Constant -> Scalar e.g. playerChoosesRock() -> playerChooses(Choice.ROCK). Which is suggested by the refactor to remove duplication (algorithmic)
-    - Also refactors there can be an opposite e.g. introduce variable <-> inline 
+    - Also refactors there can be an opposite e.g. introduce variable <-> inline
+    
+- OK so final check
+
+| Player Move | Opponent ROCK | Opponent PAPER | Opponent SCISSORS |
+| --- | --- | --- | --- |
+| ROCK | Draw (1) | Opponent Win (7) | Player Win (4) |
+| PAPER | Player Win (6) | Draw (2) | Opponent Win (9) |
+| SCISSORS | Opponent Win (5) | Player Win (8) | Draw (3) |
+
+9 Outcomes.

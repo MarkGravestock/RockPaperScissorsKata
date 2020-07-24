@@ -15,7 +15,7 @@ public class SameMovesResultInDrawScenarios {
     }
 
     @Test
-    public void given_i_have_chosen_rock_when_the_opponent_chooses_rock_then_we_should_draw() {
+    public void given_i_have_chosen_rock_when_the_opponent_chooses_rock_then_we_should_draw_1() {
         var completedGame = game.playerChooses(Choice.ROCK).opponentChooses(Choice.ROCK);
         assertTrue(completedGame.isOutcome(Outcome.DRAW));
     }
@@ -33,13 +33,13 @@ public class SameMovesResultInDrawScenarios {
     }
 
     @Test
-    public void given_i_have_chosen_paper_when_the_opponent_chooses_paper_then_we_should_draw() {
+    public void given_i_have_chosen_paper_when_the_opponent_chooses_paper_then_we_should_draw_2() {
         var completedGame = game.playerChooses(Choice.PAPER).opponentChooses(Choice.PAPER);
         assertTrue(completedGame.isOutcome(Outcome.DRAW));
     }
 
     @Test
-    public void given_i_have_chosen_scissors_when_the_opponent_chooses_scissors_then_we_should_draw() {
+    public void given_i_have_chosen_scissors_when_the_opponent_chooses_scissors_then_we_should_draw_3() {
         var completedGame = game.playerChooses(Choice.SCISSORS).opponentChooses(Choice.SCISSORS);
         assertTrue(completedGame.isOutcome(Outcome.DRAW));
     }
