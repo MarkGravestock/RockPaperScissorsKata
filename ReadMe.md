@@ -27,4 +27,7 @@ Using instructions from https://agilekatas.co.uk/katas/RockPaperScissors-Kata
 | PAPER | Player Win (6) | Draw (2) | Opponent Win (9) |
 | SCISSORS | Opponent Win (5) | Player Win (8) | Draw (3) |
 
-9 Outcomes.
+9 Outcomes - With isOutcome method it was possible to do a devil's advocate special case. So removed that and inlined getOutcome(). Confident to remove test
+although coverage is not 100% for some reason.
+
+Also would be possible to change Opponent won logic for lookup table.

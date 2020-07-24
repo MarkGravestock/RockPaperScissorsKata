@@ -11,14 +11,22 @@ public class CompletedGame {
     }
 
     public Outcome determineOutcome() {
-        if (opponentChoice.equals(playerChoice)) {
+        if (isDraw(opponentChoice, playerChoice)) {
             return Outcome.DRAW;
         }
 
-        if (opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER)) {
+        if (hasOpponentWon()) {
             return Outcome.OPPONENT_WON;
         }
 
         return Outcome.PLAYER_WON;
+    }
+
+    private boolean hasOpponentWon() {
+        return opponentChoice.equals(Choice.ROCK) && !playerChoice.equals(Choice.PAPER) || opponentChoice.equals(Choice.PAPER) && playerChoice.equals(Choice.ROCK) || opponentChoice.equals(Choice.SCISSORS) && playerChoice.equals(Choice.PAPER);
+    }
+
+    private boolean isDraw(Choice opponentChoice, Choice playerChoice) {
+        return opponentChoice.equals(playerChoice);
     }
 }
