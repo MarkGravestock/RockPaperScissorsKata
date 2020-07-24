@@ -10,10 +10,6 @@ public class CompletedGame {
         this.playerChoice = playerChoice;
     }
 
-    public boolean isOutcome(Outcome outcome) {
-        return determineOutcome().equals(outcome);
-    }
-
     public Outcome determineOutcome() {
         if (opponentChoice.equals(playerChoice)) {
             return Outcome.DRAW;
