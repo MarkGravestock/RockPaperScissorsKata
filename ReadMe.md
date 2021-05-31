@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/MarkGravestock/RockPaperScissorsKata/actions/workflows/gradle.yml/badge.svg)](https://github.com/MarkGravestock/RockPaperScissorsKata/actions/workflows/gradle.yml)
+
 ### Rock Paper Scissors Kata - Java
 
 Using instructions from https://agilekatas.co.uk/katas/RockPaperScissors-Kata
